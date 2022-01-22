@@ -8,6 +8,5 @@ jobs:
      - uses: actions/checkout@v2
        with:
         repository: Suresh051/ActionTemplates
-        path: DeereActions
         ref: 'main'
      - uses: ./DeereActions/.github/actions/Prisma
