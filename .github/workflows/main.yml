@@ -4,5 +4,9 @@ jobs:
  VeracodeFindingsJS:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/ActionTemplates@v1
+    - uses: actions/checkout@v2
+      with:
+        repository: Suresh051/ActionTemplates@v1
+        path: DeereActions
+        ref: 'main'
 
