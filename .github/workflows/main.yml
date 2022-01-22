@@ -1,13 +1,18 @@
-on: [push] 
+# This is an example of using Composite Run Steps Actions
+
+name: Composite Example
+
+on: [workflow_dispatch]
 
 jobs:
- VeracodeFindingsJS:
+  copy_files_job:
     runs-on: ubuntu-latest
+    name: A job that copy files
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/checkout@v2
+    - id: myCompositeAction
+      uses: Suresh051/CompositeActionsArchive@v1 
       with:
-        repository: Suresh051/ActionTemplates
-        path: DeereActions
-        ref: 'main'
-    - uses: ./DeereActions/.github/actions/Prisma
+        destinationFolder: '/whatever/folder'
+    - run: echo Files copied ${{ steps.myCompositeAction.outputs.copied-files }} 
+      shell: bash
