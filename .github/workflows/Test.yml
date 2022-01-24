@@ -1,0 +1,20 @@
+name: CI + CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+  
+jobs:
+  Publish_tasks_package:  
+	  if: github.event.ref == 'refs/heads/main'
+		runs-on: [ github-devl ]
+		steps:
+		- name: Publish devl grant tasks package
+      run: |
+			  echo  "5"
+			  echo  "4"
+			  echo  "3"
+			  echo  "2"
