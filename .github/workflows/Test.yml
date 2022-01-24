@@ -13,6 +13,7 @@ jobs:
     if: github.event.ref == 'refs/heads/main'
     runs-on: [ ubuntu-latest ]
     steps:
+    - uses: actions/checkout@v2
     - name: devl grant tasks package
       run: ./goodbye.sh
    
