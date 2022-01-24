@@ -18,11 +18,15 @@ jobs:
       run: |
        chmod +x ./goodbye.sh
        ./goodbye.sh
-    - name: pass
-      if: success()
-      run : echo "Pass"
-    - name: fail
-      if: failure()
-      run : echo "fail"
-   
+    - name: script
+      run: snowChangeCreated = true
+    - name: dafdsf
+      run: |
+              if (snowChangeCreated) {
+                    echo "Deployment Completed Successfully"
+                    else
+                     echo "Deployment failed"
+                }
+        
+
 
