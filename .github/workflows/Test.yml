@@ -15,6 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: devl grant tasks package
-      run: ./goodbye.sh
+      run: |
+       chmod +x ./goodbye.sh
+       ./goodbye.sh
    
 
