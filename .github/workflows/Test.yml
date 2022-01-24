@@ -14,8 +14,6 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
     - name: devl grant tasks package
-      run: |
-        echo ${GITHUB_WORKSPACE}
-        #chmod +x ${GITHUB_WORKSPACE}/.github/workflows/deploy.sh
-        #${GITHUB_WORKSPACE}/.github/workflows/deploy.sh
+      run: ./goodbye.sh
+   
 
