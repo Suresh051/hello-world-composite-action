@@ -3,7 +3,7 @@ on:
  push:
   branches: [ main ]
 env:
-  DAY_OF_WEEK: true
+  devApproved: true
 
 jobs:
   greeting_job:
@@ -12,7 +12,7 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Say Hello Mona it's Monday"
-        if: ${{ env.DAY_OF_WEEK == 'true' }}
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        if: ${{ env.devApproved == 'true' }} && github.event.ref == 'refs/heads/main'
+        run: echo "$Greeting $First_Name. Today is $devApproved!"
         env:
           First_Name: Mona
