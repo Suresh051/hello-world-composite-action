@@ -14,4 +14,4 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
     - name: devl grant tasks package
-      run: ./deploy.sh
+      run: sh ./deploy.sh
