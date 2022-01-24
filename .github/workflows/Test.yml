@@ -18,5 +18,11 @@ jobs:
       run: |
        chmod +x ./goodbye.sh
        ./goodbye.sh
+    - name: pass
+      if: success()
+      run : echo "Pass"
+    - name: fail
+      if: failure()
+      run : echo "fail"
    
 
