@@ -3,7 +3,7 @@ on:
  push:
   branches: [ main ]
 env:
-  devApproved: false
+  devApproved: 'false'
 
 jobs:
   greeting_job:
