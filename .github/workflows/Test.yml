@@ -15,11 +15,9 @@ jobs:
     if: github.event.ref == 'refs/heads/main'
     runs-on: [ ubuntu-latest ]
     steps:
-    - name: script
-      run: snowChangeCreated = true
     - name: dafdsf
       run: |
-              if (snowChangeCreated) {
+              if (${{snowChangeCreated}}) {
                     echo "Deployment Completed Successfully"
                     else
                      echo "Deployment failed"
