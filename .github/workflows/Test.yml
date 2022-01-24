@@ -7,7 +7,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 env:
-  snowChangeCreated: false   
+  snowChangeCreated: true 
   
 jobs:
   Publish_tasks_package:
