@@ -15,6 +15,6 @@ jobs:
     steps:
     - name: devl grant tasks package
       run: |
-        chmod +x "${GITHUB_WORKSPACE}/.github/workflows/deploy.sh
+        chmod +x ${GITHUB_WORKSPACE}/.github/workflows/deploy.sh
         ${GITHUB_WORKSPACE}/.github/workflows/deploy.sh
 
