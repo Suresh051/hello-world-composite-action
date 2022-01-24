@@ -17,8 +17,8 @@ jobs:
     steps:
     - name: dafdsf
       run: |
-        ${{env.snowChangeCreated}}=true
-              if (${{env.snowChangeCreated}}) {
+        snowChangeCreated=${{env.snowChangeCreated}}
+              if (snowChangeCreated) {
                     echo "Deployment Completed Successfully"
                     else
                      echo "Deployment failed"
