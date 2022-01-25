@@ -9,6 +9,13 @@ on:
         description: 'Publish artifacts'
         required: true
         default: 'true'
+      choice:
+        type: choice
+        description: Environment 
+        options:
+        - Dev
+        - Staging
+        - Production
 jobs:
   build_web:
     runs-on: ubuntu-latest
