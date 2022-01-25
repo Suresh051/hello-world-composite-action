@@ -9,7 +9,7 @@ on:
         description: 'Publish artifacts'
         required: true
         default: 'true'
-      choice:
+      Environment:
         type: choice
         description: Environment 
         options:
@@ -28,12 +28,9 @@ jobs:
         uses: subosito/flutter-action@v2.2.0
         with:
           flutter-version: '${{ github.event.inputs.flutter_version }}'
-
-      ## Build scripts here (see the complete example on GitHub)
-
-      - if: github.event.inputs.publish_artifacts == 'true'
+      - if: github.event.inputs.Environment == 'Dev'
         name: Publish Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifacts
-          path: build/web
+        run: echo "dev"
+      - if: github.event.inputs.Environment == 'Production'
+        name: Publish Artifacts1
+        run: echo "Production"
