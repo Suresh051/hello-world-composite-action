@@ -1,18 +1,15 @@
-name: github-runners
+name: gh-action-dropdown-list-input
 on:
- push:
-  branches: [ main ]
-env:
-  devApproved: 'false'
-
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: 'dev,staging,[uat],prod'
 jobs:
-  greeting_job:
+  stagingBuildAndDeploy:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday"
-        if: env.devApproved == 'true' && github.event.ref == 'refs/heads/main'
-        run: echo "$Greeting $First_Name. Today is $devApproved!"
-        env:
-          First_Name: Mona
+      - name: Install Node Dependencies
+        run: |
+         echo ${{ github.event.inputs.environment }}
