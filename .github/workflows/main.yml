@@ -4,7 +4,7 @@ name: Composite Example
 
 on: [workflow_dispatch]
 env:
- devapproved: 'false'
+ devapproved: 'true'
 
 jobs:
   copy_files_job:
