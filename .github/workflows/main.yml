@@ -3,20 +3,21 @@
 name: Composite Example
 
 on: [workflow_dispatch]
+env:
+ devapproved: 'true'
 
 jobs:
   copy_files_job:
     runs-on: ubuntu-latest
-    name: A job that copy files
     steps:
     - name: Take off label
-      uses: actions/github-script@v1
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: >
-          github.issues.removeLabel({
-          issue_number: context.issue.number,
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          name: '${{ github.event.label.name }}'
-            })
+      run: |         
+        if [ env.devapproved == 'true']; then
+          echo "No changes to commit"
+        else
+          git commit -m "Updating GHES workflows"
+        fi
+         
+
+
+           
