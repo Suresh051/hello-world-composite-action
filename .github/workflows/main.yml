@@ -15,7 +15,7 @@ jobs:
         if [ env.devapproved == 'true']; then
           echo "No changes to commit"
         else
-          git commit -m "Updating GHES workflows"
+          echo "changes"
         fi
          
 
