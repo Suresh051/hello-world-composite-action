@@ -4,7 +4,7 @@ name: Composite Example
 
 on: [workflow_dispatch]
 env:
- devapproved: 'true'
+ devapproved: 'false'
 
 jobs:
   copy_files_job:
@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Take off label
       run: |         
-        if [ env.devapproved == 'true']; then
+        if [ ${{ env.devapproved }} == 'true' ]; then
           echo "No changes to commit"
         else
           echo "changes"
